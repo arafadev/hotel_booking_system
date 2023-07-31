@@ -17,7 +17,7 @@ class HotelFactory extends Factory
     public function definition()
     {
         return [
-            'name' => ucfirst(fake()->text(20)),
+            'name' => rtrim(fake()->text(20) . '_' . rand(99, 999), '.'),
             'description' => fake()->sentence(),
             'created_at' => fake()->dateTimeBetween('-10 year', '-20 day'),
             'updated_at' => fake()->dateTimeBetween('-1 year', '-5 day'),
